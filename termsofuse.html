@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use — Maths Scanner & AI Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:   #0F1D3B;
+            --blue:   #1E3A8A;
+            --accent: #2563EB;
+            --sky:    #3B82F6;
+            --teal:   #0EA5E9;
+            --green:  #059669;
+            --red:    #DC2626;
+            --amber:  #D97706;
+            --ink:    #1E293B;
+            --body:   #334155;
+            --muted:  #64748B;
+            --border: #CBD5E1;
+            --surface:#F1F5F9;
+            --white:  #FFFFFF;
+            --card-shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(30,58,138,.08);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            color: var(--body);
+            background: #EEF2FF;
+            min-height: 100vh;
+        }
+
+        .site-header {
+            background: linear-gradient(135deg, #0B1628 0%, #1E3A8A 55%, #1D4ED8 100%);
+            color: #fff;
+            padding: 56px 24px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .site-header::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 40%, rgba(99,102,241,.2) 0%, transparent 55%),
+                        radial-gradient(ellipse at 80% 70%, rgba(14,165,233,.15) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        .header-icon { font-size: 52px; display: block; margin-bottom: 16px; filter: drop-shadow(0 4px 12px rgba(0,0,0,.25)); }
+        .site-header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 400;
+            letter-spacing: -.5px;
+            margin-bottom: 6px;
+        }
+        .site-header .doc-type { font-size: .9rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; opacity: .75; margin-bottom: 20px; }
+        .badge-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 16px; }
+        .badge { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); border-radius: 20px; padding: 4px 14px; font-size: .78rem; font-weight: 500; backdrop-filter: blur(4px); }
+
+        .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 20px 60px; }
+
+        .toc-strip {
+            background: var(--white); border-radius: 14px; box-shadow: var(--card-shadow);
+            padding: 20px 24px; margin: -28px 0 32px; position: relative; z-index: 2;
+        }
+        .toc-strip p { font-size: .78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+        .toc-links { display: flex; flex-wrap: wrap; gap: 6px; }
+        .toc-links a { font-size: .82rem; color: var(--accent); text-decoration: none; background: var(--surface); border-radius: 6px; padding: 4px 10px; font-weight: 500; transition: background .15s, color .15s; }
+        .toc-links a:hover { background: var(--accent); color: #fff; }
+
+        .section { background: var(--white); border-radius: 16px; box-shadow: var(--card-shadow); padding: 32px; margin-bottom: 24px; scroll-margin-top: 24px; }
+        .section-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1.5px solid var(--surface); }
+        .section-icon { width: 42px; height: 42px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .icon-blue   { background: #DBEAFE; }
+        .icon-green  { background: #D1FAE5; }
+        .icon-red    { background: #FEE2E2; }
+        .icon-amber  { background: #FEF3C7; }
+        .icon-purple { background: #EDE9FE; }
+        .icon-teal   { background: #CFFAFE; }
+        .icon-slate  { background: #F1F5F9; }
+        .icon-indigo { background: #E0E7FF; }
+
+        h2 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; color: var(--ink); letter-spacing: -.3px; }
+        h3 { color: var(--accent); margin: 18px 0 8px; font-size: 1rem; font-weight: 600; }
+        .section-num { font-size: .72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-top: 1px; }
+
+        p { line-height: 1.75; margin-bottom: 14px; font-size: .97rem; }
+        p:last-child { margin-bottom: 0; }
+        ul, ol { padding-left: 20px; margin-bottom: 14px; }
+        li { line-height: 1.75; font-size: .97rem; margin-bottom: 4px; }
+        strong { font-weight: 600; color: var(--ink); }
+        code { font-family: 'SF Mono', 'Fira Code', monospace; background: var(--surface); border-radius: 4px; padding: 1px 6px; font-size: .85em; color: var(--accent); border: 1px solid var(--border); }
+        a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .callout { border-radius: 10px; padding: 14px 18px; margin: 16px 0; font-size: .93rem; line-height: 1.65; }
+        .callout-blue   { background: #EFF6FF; border-left: 3px solid var(--accent); color: #1E40AF; }
+        .callout-green  { background: #ECFDF5; border-left: 3px solid var(--green);  color: #065F46; }
+        .callout-red    { background: #FFF1F2; border-left: 3px solid var(--red);    color: #9B1C1C; }
+        .callout-amber  { background: #FFFBEB; border-left: 3px solid var(--amber);  color: #92400E; }
+
+        .table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 10px; border: 1px solid var(--border); }
+        table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 420px; }
+        thead tr { background: var(--surface); }
+        th { text-align: left; padding: 11px 14px; font-weight: 600; color: var(--ink); font-size: .82rem; text-transform: uppercase; letter-spacing: .5px; border-bottom: 1px solid var(--border); }
+        td { padding: 10px 14px; border-bottom: 1px solid var(--surface); vertical-align: top; line-height: 1.6; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: #FAFBFF; }
+
+        .divider { height: 1px; background: var(--surface); margin: 20px 0; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #EFF6FF, #F0FDF4);
+            border: 1px solid #BFDBFE;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 16px 0;
+        }
+        .highlight-box h3 { margin-top: 0; color: var(--navy); }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+        .col-box { background: var(--surface); border-radius: 10px; padding: 16px; border: 1px solid var(--border); }
+        .col-box h3 { color: var(--ink); margin-top: 0; font-size: .9rem; }
+
+        .footer { background: var(--navy); color: rgba(255,255,255,.65); text-align: center; padding: 28px 20px; font-size: .85rem; line-height: 1.8; }
+        .footer a { color: rgba(255,255,255,.85); }
+        .footer strong { color: #fff; }
+
+        @media (max-width: 600px) {
+            .section { padding: 20px 18px; }
+            .site-header { padding: 40px 20px 36px; }
+            .two-col { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <span class="header-icon">📜</span>
+    <h1>Maths Scanner &amp; AI Solution</h1>
+    <div class="doc-type">Terms of Use</div>
+    <div class="badge-row">
+        <span class="badge">📅 Last Updated: April 11, 2026</span>
+        <span class="badge">🤖 AI Solution Disclaimer Included</span>
+        <span class="badge">⚖️ Educational Reference Terms</span>
+        <span class="badge">✅ Google Play Compliant</span>
+    </div>
+</header>
+
+<div class="page-wrap">
+
+    <div class="toc-strip">
+        <p>Quick Navigation</p>
+        <div class="toc-links">
+            <a href="#acceptance">Acceptance</a>
+            <a href="#license">License Grant</a>
+            <a href="#permitted">Permitted Use</a>
+            <a href="#prohibited">Prohibited Use</a>
+            <a href="#ai-terms">AI Solver &amp; Disclaimer</a>
+            <a href="#camera-terms">Camera &amp; OCR</a>
+            <a href="#ads-terms">Advertising</a>
+            <a href="#ip">Intellectual Property</a>
+            <a href="#thirdparty-terms">Third-Party Services</a>
+            <a href="#termination">Termination</a>
+            <a href="#liability">Limitation of Liability</a>
+            <a href="#governing">Governing Law</a>
+            <a href="#changes-terms">Changes</a>
+            <a href="#contact-terms">Contact</a>
+        </div>
+    </div>
+
+    <!-- ── 1. Acceptance ─────────────────────────────────────────── -->
+    <div class="section" id="acceptance">
+        <div class="section-head">
+            <div class="section-icon icon-blue">✅</div>
+            <div><h2>Acceptance of Terms</h2><div class="section-num">Section 01</div></div>
+        </div>
+        <p>These Terms of Use ("Terms") set forth the legally binding terms between you ("User") and <strong>Jay Studio</strong> ("we," "us," "our") for using <strong>Maths Scanner &amp; AI Solution</strong> (the "App").</p>
+        <div class="callout callout-blue">
+            <strong>By downloading, installing, or using the App, you agree that you:</strong><br>
+            (a) have read and understood these Terms;<br>
+            (b) agree to use the App in accordance with all applicable laws and educational policies;<br>
+            (c) agree to be bound by these Terms and our Privacy Policy.<br><br>
+            If you do not agree, please uninstall the App immediately.
+        </div>
+    </div>
+
+    <!-- ── 2. License Grant ───────────────────────────────────────── -->
+    <div class="section" id="license">
+        <div class="section-head">
+            <div class="section-icon icon-green">📱</div>
+            <div><h2>License Grant</h2><div class="section-num">Section 02</div></div>
+        </div>
+        <p>Jay Studio grants you a <strong>limited, personal, non-exclusive, non-transferable, revocable license</strong> to download and use Maths Scanner &amp; AI Solution solely for your personal, non-commercial educational learning purposes on Android devices that you own or control.</p>
+        <p>You may not lease, sell, redistribute, sublicense, or commercially exploit the App or any AI-generated solution content without explicit written permission from Jay Studio.</p>
+    </div>
+
+    <!-- ── 3. Permitted Use ───────────────────────────────────────── -->
+    <div class="section" id="permitted">
+        <div class="section-head">
+            <div class="section-icon icon-teal">🟢</div>
+            <div><h2>Permitted Use</h2><div class="section-num">Section 03</div></div>
+        </div>
+        <p>You are authorized to use the App for the following educational purposes:</p>
+        <div class="two-col">
+            <div class="col-box">
+                <h3>Core Scanning &amp; Solving</h3>
+                <ul>
+                    <li>Scan math equations via device camera</li>
+                    <li>Draw handwritten math problems on canvas</li>
+                    <li>Generate step-by-step AI math solutions</li>
+                    <li>Type custom equations with Math Keyboard</li>
+                </ul>
+            </div>
+            <div class="col-box">
+                <h3>Learning &amp; Calculators</h3>
+                <ul>
+                    <li>Use 2D / 3D Geometry Calculators</li>
+                    <li>Study Trigonometry, Matrices, &amp; Formulas</li>
+                    <li>Play Math Games &amp; Daily Workouts</li>
+                    <li>Save problem solutions in local History</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 4. Prohibited Use ──────────────────────────────────────── -->
+    <div class="section" id="prohibited">
+        <div class="section-head">
+            <div class="section-icon icon-red">🚫</div>
+            <div><h2>Prohibited Use</h2><div class="section-num">Section 04</div></div>
+        </div>
+        <div class="callout callout-red">
+            Violating any restriction below may result in immediate revocation of your license and termination of access.
+        </div>
+        <p>You agree <strong>not</strong> to:</p>
+        <ul>
+            <li>Reverse engineer, decompile, or attempt to extract the source code or API keys from the App</li>
+            <li>Use the App to cheat during live invigilated examinations in violation of academic honor codes or institution policies</li>
+            <li>Use automated bots, scripts, or scrapers to overload or abuse the Google Gemini AI backend API</li>
+            <li>Modify, adapt, or build derivative products based on our UI design or math solver workflows</li>
+            <li>Interfere with or bypass in-app ad delivery systems (e.g. using ad-blocking scripts or fraudulent ad clicking)</li>
+            <li>Remove or alter any copyright or proprietary notices displayed in the App</li>
+        </ul>
+    </div>
+
+    <!-- ── 5. AI Solver Terms & Disclaimer ────────────────────────── -->
+    <div class="section" id="ai-terms">
+        <div class="section-head">
+            <div class="section-icon icon-amber">🤖</div>
+            <div><h2>AI Math Solver Terms &amp; Accuracy Disclaimer</h2><div class="section-num">Section 05</div></div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>⚠️ Critical Disclaimer: AI Can Make Mistakes</h3>
+            <p>Math solutions in this App are powered by artificial intelligence engines (Google Gemini AI API). While these models are highly capable, <strong>AI models can misinterpret handwriting, misread mathematical symbols, or produce incorrect calculations and flawed step-by-step logic.</strong></p>
+        </div>
+
+        <h3>Condition of AI Feature Use</h3>
+        <ul>
+            <li><strong>For Educational &amp; Reference Use Only:</strong> AI-generated math answers are designed to serve as learning guides, study aids, and reference solutions — NOT as infallible truth.</li>
+            <li><strong>User Verification Obligation:</strong> You are solely responsible for reviewing, double-checking, and verifying all AI solutions against textbooks, teacher guides, or standard formulas before relying on them for graded assignments or official exams.</li>
+            <li><strong>No Guarantee of Accuracy:</strong> Jay Studio makes no warranties or guarantees regarding the 100% precision or correctness of AI-generated answers.</li>
+            <li><strong>Limitation of Academic &amp; Financial Responsibility:</strong> Jay Studio and its developers are not liable for academic penalties, incorrect homework submissions, exam scores, or calculation errors resulting from reliance on AI solutions.</li>
+        </ul>
+    </div>
+
+    <!-- ── 6. Camera & OCR Terms ──────────────────────────────────── -->
+    <div class="section" id="camera-terms">
+        <div class="section-head">
+            <div class="section-icon icon-purple">📷</div>
+            <div><h2>Camera &amp; Math OCR Terms</h2><div class="section-num">Section 06</div></div>
+        </div>
+        <p>The photo scanning feature requires access to your device's camera. You agree to use the camera scanner only for photographing printed or written mathematical equations. Capturing prohibited, inappropriate, or non-educational content is strictly discouraged.</p>
+    </div>
+
+    <!-- ── 7. Advertising Terms ───────────────────────────────────── -->
+    <div class="section" id="ads-terms">
+        <div class="section-head">
+            <div class="section-icon icon-amber">📢</div>
+            <div><h2>Advertising (Google AdMob)</h2><div class="section-num">Section 07</div></div>
+        </div>
+        <p>Maths Scanner &amp; AI Solution is offered free of charge and is funded through advertising delivered by <strong>Google AdMob</strong>.</p>
+        <ul>
+            <li>By using the App, you consent to the display of banner, interstitial, and voluntary rewarded video ads.</li>
+            <li>You agree not to engage in fraudulent ad clicking or attempt to manipulate ad impressions.</li>
+            <li>AdMob may collect device metadata and advertising IDs to deliver personalized or contextual ads according to <a href="https://policies.google.com/technologies/ads" target="_blank">Google's Advertising Policies</a>.</li>
+        </ul>
+    </div>
+
+    <!-- ── 8. Intellectual Property ───────────────────────────────── -->
+    <div class="section" id="ip">
+        <div class="section-head">
+            <div class="section-icon icon-indigo">©️</div>
+            <div><h2>Intellectual Property</h2><div class="section-num">Section 08</div></div>
+        </div>
+        <p>All rights, titles, and interests in and to Maths Scanner &amp; AI Solution — including software code, UI designs, icons, graphics, branding, and original content — belong exclusively to <strong>Jay Studio</strong>.</p>
+        <p>Open-source libraries used (e.g. Jetpack Compose, CameraX, Room, Coil, OkHttp) remain subject to their respective open-source licenses.</p>
+    </div>
+
+    <!-- ── 9. Third-Party Services ────────────────────────────────── -->
+    <div class="section" id="thirdparty-terms">
+        <div class="section-head">
+            <div class="section-icon icon-slate">🔗</div>
+            <div><h2>Third-Party Services</h2><div class="section-num">Section 09</div></div>
+        </div>
+        <p>The App relies on third-party cloud services (such as Google Gemini AI API, Google ML Kit, and Google AdMob). Jay Studio is not responsible for external network outages, API downtime, or changes made to third-party services by Google.</p>
+    </div>
+
+    <!-- ── 10. Termination ────────────────────────────────────────── -->
+    <div class="section" id="termination">
+        <div class="section-head">
+            <div class="section-icon icon-red">🔚</div>
+            <div><h2>Termination</h2><div class="section-num">Section 10</div></div>
+        </div>
+        <p>You may terminate these Terms at any time by uninstalling the App. Jay Studio reserves the right to suspend or terminate app support or AI feature availability at any time without prior notice.</p>
+    </div>
+
+    <!-- ── 11. Limitation of Liability ───────────────────────────── -->
+    <div class="section" id="liability">
+        <div class="section-head">
+            <div class="section-icon icon-amber">⚖️</div>
+            <div><h2>Disclaimer of Warranties &amp; Liability</h2><div class="section-num">Section 11</div></div>
+        </div>
+        <p>THE APP IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. JAY STUDIO DISCLAIMS ALL WARRANTIES, INCLUDING ACCURACY, RELIABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+        <p>IN NO EVENT SHALL JAY STUDIO BE LIABLE FOR ANY INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, OR FOR LOSS OF DATA OR ACADEMIC MARKS ARISING OUT OF THE USE OR INABILITY TO USE THE APP OR AI SOLVER.</p>
+    </div>
+
+    <!-- ── 12. Governing Law ───────────────────────────────────────── -->
+    <div class="section" id="governing">
+        <div class="section-head">
+            <div class="section-icon icon-blue">🏛️</div>
+            <div><h2>Governing Law &amp; Jurisdiction</h2><div class="section-num">Section 12</div></div>
+        </div>
+        <p>These Terms are governed by and construed in accordance with the laws of <strong>India</strong>. Any legal disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts located in <strong>Gujarat, India</strong>.</p>
+    </div>
+
+    <!-- ── 13. Changes to Terms ───────────────────────────────────── -->
+    <div class="section" id="changes-terms">
+        <div class="section-head">
+            <div class="section-icon icon-teal">🔄</div>
+            <div><h2>Changes to Terms</h2><div class="section-num">Section 13</div></div>
+        </div>
+        <p>We reserve the right to revise these Terms at any time. Continued use of the App following any updates signifies your agreement to the modified Terms.</p>
+    </div>
+
+    <!-- ── 14. Contact ────────────────────────────────────────────── -->
+    <div class="section" id="contact-terms">
+        <div class="section-head">
+            <div class="section-icon icon-blue">✉️</div>
+            <div><h2>Contact Us</h2><div class="section-num">Section 14</div></div>
+        </div>
+        <p>For questions or inquiries regarding these Terms of Use:</p>
+        <ul>
+            <li><strong>Developer:</strong> Jay Studio</li>
+            <li><strong>Package Name:</strong> <code>com.jaystudio.ai.maths.scanner.solution</code></li>
+            <li><strong>Email:</strong> <a href="mailto:jaystudioapps@gmail.com">jaystudioapps@gmail.com</a></li>
+            <li><strong>Location:</strong> Gujarat, India</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <strong>Maths Scanner &amp; AI Solution</strong><br>
+    © 2026 Jay Studio · Gujarat, India<br>
+    <a href="mailto:jaystudioapps@gmail.com">jaystudioapps@gmail.com</a>
+</footer>
+
+</body>
+</html>
