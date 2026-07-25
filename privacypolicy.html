@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Maths Scanner & AI Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:   #0F1D3B;
+            --blue:   #1E3A8A;
+            --accent: #2563EB;
+            --sky:    #3B82F6;
+            --teal:   #0EA5E9;
+            --green:  #059669;
+            --red:    #DC2626;
+            --amber:  #D97706;
+            --ink:    #1E293B;
+            --body:   #334155;
+            --muted:  #64748B;
+            --border: #CBD5E1;
+            --surface:#F1F5F9;
+            --white:  #FFFFFF;
+            --card-shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(30,58,138,.08);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            color: var(--body);
+            background: #EEF2FF;
+            min-height: 100vh;
+        }
+
+        .site-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, var(--sky) 100%);
+            color: #fff;
+            padding: 56px 24px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .site-header::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 70% 30%, rgba(59,130,246,.25) 0%, transparent 60%),
+                        radial-gradient(ellipse at 20% 80%, rgba(14,165,233,.18) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        .header-icon {
+            font-size: 52px;
+            display: block;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,.25));
+        }
+        .site-header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 400;
+            letter-spacing: -.5px;
+            margin-bottom: 6px;
+        }
+        .site-header .doc-type {
+            font-size: .9rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: .75;
+            margin-bottom: 20px;
+        }
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 16px;
+        }
+        .badge {
+            background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: .78rem;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+
+        .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 20px 60px; }
+
+        .toc-strip {
+            background: var(--white);
+            border-radius: 14px;
+            box-shadow: var(--card-shadow);
+            padding: 20px 24px;
+            margin: -28px 0 32px;
+            position: relative;
+            z-index: 2;
+        }
+        .toc-strip p {
+            font-size: .78rem; font-weight: 600; letter-spacing: 1.5px;
+            text-transform: uppercase; color: var(--muted); margin-bottom: 12px;
+        }
+        .toc-links { display: flex; flex-wrap: wrap; gap: 6px; }
+        .toc-links a {
+            font-size: .82rem; color: var(--accent); text-decoration: none;
+            background: var(--surface); border-radius: 6px; padding: 4px 10px;
+            font-weight: 500; transition: background .15s, color .15s;
+        }
+        .toc-links a:hover { background: var(--accent); color: #fff; }
+
+        .section {
+            background: var(--white); border-radius: 16px; box-shadow: var(--card-shadow);
+            padding: 32px; margin-bottom: 24px; scroll-margin-top: 24px;
+        }
+        .section-head {
+            display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+            padding-bottom: 16px; border-bottom: 1.5px solid var(--surface);
+        }
+        .section-icon {
+            width: 42px; height: 42px; border-radius: 11px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; flex-shrink: 0;
+        }
+        .icon-blue   { background: #DBEAFE; }
+        .icon-green  { background: #D1FAE5; }
+        .icon-red    { background: #FEE2E2; }
+        .icon-amber  { background: #FEF3C7; }
+        .icon-purple { background: #EDE9FE; }
+        .icon-teal   { background: #CFFAFE; }
+        .icon-slate  { background: #F1F5F9; }
+
+        h2 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; color: var(--ink); letter-spacing: -.3px; }
+        .section-num { font-size: .72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-top: 1px; }
+
+        p { line-height: 1.75; margin-bottom: 14px; font-size: .97rem; }
+        p:last-child { margin-bottom: 0; }
+        ul, ol { padding-left: 20px; margin-bottom: 14px; }
+        li { line-height: 1.75; font-size: .97rem; margin-bottom: 4px; }
+        strong { font-weight: 600; color: var(--ink); }
+        code { font-family: 'SF Mono', 'Fira Code', monospace; background: var(--surface); border-radius: 4px; padding: 1px 6px; font-size: .85em; color: var(--accent); border: 1px solid var(--border); }
+        a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .callout { border-radius: 10px; padding: 14px 18px; margin: 16px 0; font-size: .93rem; line-height: 1.65; }
+        .callout-blue   { background: #EFF6FF; border-left: 3px solid var(--accent); color: #1E40AF; }
+        .callout-green  { background: #ECFDF5; border-left: 3px solid var(--green);  color: #065F46; }
+        .callout-red    { background: #FFF1F2; border-left: 3px solid var(--red);    color: #9B1C1C; }
+        .callout-amber  { background: #FFFBEB; border-left: 3px solid var(--amber);  color: #92400E; }
+
+        .table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 10px; border: 1px solid var(--border); }
+        table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 520px; }
+        thead tr { background: var(--surface); }
+        th { text-align: left; padding: 11px 14px; font-weight: 600; color: var(--ink); font-size: .82rem; text-transform: uppercase; letter-spacing: .5px; border-bottom: 1px solid var(--border); }
+        td { padding: 10px 14px; border-bottom: 1px solid var(--surface); vertical-align: top; line-height: 1.6; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: #FAFBFF; }
+        .tick { color: var(--green); font-weight: 700; }
+        .cross { color: var(--red); font-weight: 700; }
+
+        .pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+        .pill { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: .82rem; font-weight: 500; color: var(--ink); }
+        .pill-green { background: #D1FAE5; border-color: #6EE7B7; color: #065F46; }
+        .pill-red   { background: #FEE2E2; border-color: #FCA5A5; color: #991B1B; }
+        .pill-blue  { background: #DBEAFE; border-color: #93C5FD; color: #1D4ED8; }
+
+        .divider { height: 1px; background: var(--surface); margin: 20px 0; }
+
+        .ad-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+        .ad-type-card { background: var(--surface); border-radius: 10px; padding: 14px 16px; border: 1px solid var(--border); }
+        .ad-type-card strong { display: block; margin-bottom: 4px; color: var(--ink); font-size: .9rem; }
+        .ad-type-card span { font-size: .83rem; color: var(--muted); line-height: 1.5; }
+
+        .footer { background: var(--navy); color: rgba(255,255,255,.65); text-align: center; padding: 28px 20px; font-size: .85rem; line-height: 1.8; }
+        .footer a { color: rgba(255,255,255,.85); }
+        .footer strong { color: #fff; }
+
+        @media (max-width: 600px) {
+            .section { padding: 20px 18px; }
+            .site-header { padding: 40px 20px 36px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <span class="header-icon">📐</span>
+    <h1>Maths Scanner &amp; AI Solution</h1>
+    <div class="doc-type">Privacy Policy</div>
+    <div class="badge-row">
+        <span class="badge">📅 Last Updated: April 11, 2026</span>
+        <span class="badge">📋 Effective: April 11, 2026</span>
+        <span class="badge">🤖 Google AI / Gemini Powered</span>
+        <span class="badge">🌐 GDPR-Aware</span>
+        <span class="badge">✅ Google Play Compliant</span>
+    </div>
+</header>
+
+<div class="page-wrap">
+
+    <div class="toc-strip">
+        <p>Quick Navigation</p>
+        <div class="toc-links">
+            <a href="#intro">Introduction</a>
+            <a href="#collect">Data We Collect</a>
+            <a href="#ai-solving">AI Math Solver &amp; Disclaimer</a>
+            <a href="#camera">Camera Permission</a>
+            <a href="#local-storage">Local History</a>
+            <a href="#ads">Advertising (AdMob)</a>
+            <a href="#analytics">Analytics</a>
+            <a href="#thirdparty">Third-Party SDKs</a>
+            <a href="#storage">Storage &amp; Security</a>
+            <a href="#rights">Your Rights</a>
+            <a href="#permissions">Permissions</a>
+            <a href="#children">Children</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- ── 1. Introduction ───────────────────────────────────────── -->
+    <div class="section" id="intro">
+        <div class="section-head">
+            <div class="section-icon icon-blue">📖</div>
+            <div><h2>Introduction</h2><div class="section-num">Section 01</div></div>
+        </div>
+        <p>Welcome to <strong>Maths Scanner &amp; AI Solution</strong> (the "App"), developed and operated by <strong>Jay Studio</strong> ("we," "us," "our"). The App is an educational math tool designed for Android devices, providing photo math scanning, drawing solvers, AI step-by-step problem solutions, geometry calculators, math formulas, and interactive learning games.</p>
+        <p>This Privacy Policy describes what information we collect, how it is processed, why we use Google AI technologies, and the rights you have as a user. <strong>Please read it carefully before using the App.</strong></p>
+        <div class="callout callout-blue">
+            By downloading, installing, or using the App, you acknowledge that you have read and agree to this Privacy Policy. If you do not agree, please uninstall and discontinue using the App.
+        </div>
+        <p>This policy covers all features of the App including camera OCR math scanning, AI math solution generation, interactive drawing solver, scientific &amp; geometry calculators, math history, and ad integrations.</p>
+    </div>
+
+    <!-- ── 2. Data We Collect ─────────────────────────────────────── -->
+    <div class="section" id="collect">
+        <div class="section-head">
+            <div class="section-icon icon-teal">📊</div>
+            <div><h2>Information We Collect</h2><div class="section-num">Section 02</div></div>
+        </div>
+        <p>We collect information in three ways: data provided directly by you, data processed from your camera/drawing inputs, and technical data collected automatically by integrated third-party SDKs (detailed in Section 8).</p>
+
+        <h3 style="color:var(--accent);margin:18px 0 8px;font-size:1rem;">2.1 Data You Provide Manually</h3>
+        <ul>
+            <li>Mathematical equations, formulas, or expressions entered via our custom math keyboard</li>
+            <li>Handwritten math drawings created on the Draw &amp; Solve canvas</li>
+            <li>Saved math solutions and problem bookmarks stored in your local History tab</li>
+            <li>App configuration settings (e.g., preferred language choices)</li>
+        </ul>
+        <p>Your saved math history and bookmarks are stored <strong>exclusively on your device</strong> using Android Room (SQLite database). We do not store your private math history on our servers.</p>
+
+        <h3 style="color:var(--accent);margin:18px 0 8px;font-size:1rem;">2.2 Automatically &amp; Feature-based Data</h3>
+        <p>The following are processed when you interact with specific features:</p>
+        <ul>
+            <li><strong>Camera Images</strong> (if permission granted): captured frames are processed in-memory for optical character recognition (OCR) and sent securely to Google AI API to solve math problems — see Section 4</li>
+            <li><strong>Advertising Identifiers</strong>: collected by Google AdMob for ad delivery and frequency capping — see Section 6</li>
+            <li><strong>App Usage &amp; Diagnostics</strong>: screen interaction events and crash reports collected anonymously via Firebase — see Section 7</li>
+            <li><strong>Device Specifications</strong>: screen density, OS build, language, and hardware model for layout scaling and compatibility</li>
+        </ul>
+
+        <h3 style="color:var(--accent);margin:18px 0 8px;font-size:1rem;">2.3 Data NOT Collected by Us</h3>
+        <div class="callout callout-green">
+            <strong>Jay Studio does not collect, store, or demand:</strong> your real name, email address, phone number, physical address, financial credentials, bank details, contact lists, or personal photos from your gallery.
+        </div>
+    </div>
+
+    <!-- ── 3. AI Math Solver & Disclaimer ──────────────────────────── -->
+    <div class="section" id="ai-solving">
+        <div class="section-head">
+            <div class="section-icon icon-amber">🤖</div>
+            <div><h2>AI Math Solver &amp; Accuracy Disclaimer</h2><div class="section-num">Section 03</div></div>
+        </div>
+
+        <p>Our App utilizes <strong>Google Gemini AI</strong> and cloud artificial intelligence models to process complex mathematical expressions, recognize handwritten symbols, and generate detailed step-by-step solutions.</p>
+
+        <div class="callout callout-amber">
+            <strong>⚠️ Important Notice Regarding AI Generated Solutions:</strong><br>
+            Math solutions and explanations in this App are generated using artificial intelligence (Google Gemini API). While AI models are highly advanced, <strong>AI can make mistakes, misinterpret math symbols, or produce calculation errors</strong>.
+        </div>
+
+        <h3 style="color:var(--accent);margin:18px 0 8px;font-size:1rem;">How AI Requests Work</h3>
+        <ul>
+            <li>When you scan a photo, draw an equation, or submit a math question, the text/image content is transmitted over encrypted HTTPS to Google AI services (Gemini API).</li>
+            <li>The AI processes the math problem and returns a formatted step-by-step answer back to your device.</li>
+            <li>No personally identifying user metadata (such as your account identity or personal profile) is attached to the math query payload.</li>
+        </ul>
+
+        <h3 style="color:var(--accent);margin:18px 0 8px;font-size:1rem;">AI Limitation &amp; User Responsibility</h3>
+        <p>AI technology operates on probabilistic pattern matching and reasoning algorithms. Consequently:</p>
+        <div class="pill-list">
+            <span class="pill pill-red">AI may misread handwritten math characters</span>
+            <span class="pill pill-red">Step-by-step calculations may contain mistakes</span>
+            <span class="pill pill-blue">Solutions are intended for learning &amp; reference only</span>
+            <span class="pill pill-green">Users must double-check critical answers</span>
+        </div>
+        <p>Jay Studio does not guarantee 100% mathematical accuracy for every solution generated by the AI engine. Users are strongly advised to verify AI-generated answers against official textbooks or teachers before relying on them for examinations or official submissions.</p>
+    </div>
+
+    <!-- ── 4. Camera ──────────────────────────────────────────────── -->
+    <div class="section" id="camera">
+        <div class="section-head">
+            <div class="section-icon icon-purple">📷</div>
+            <div><h2>Camera Permission &amp; Usage</h2><div class="section-num">Section 04</div></div>
+        </div>
+        <p>The App requests the <code>CAMERA</code> permission strictly to enable photo-based math scanning. This allows you to point your camera at printed or written math problems in books or notes to automatically capture and solve them.</p>
+
+        <div class="callout callout-green">
+            <strong>Privacy Assurance for Camera Usage:</strong><br>
+            • Camera frames are used strictly for identifying mathematical equations.<br>
+            • Captured images are processed transiently in memory to perform OCR recognition.<br>
+            • Images are <strong>never stored on local disk</strong> after solving, nor are they compiled into a private photo gallery.<br>
+            • We do <strong>never sell, publish, or store</strong> your captured photos on public or private servers.
+        </div>
+        <p>Camera access is completely optional. You can choose to enter math problems manually using the built-in Math Keyboard or Draw canvas without enabling camera access.</p>
+    </div>
+
+    <!-- ── 5. Local Storage ────────────────────────────────────────── -->
+    <div class="section" id="local-storage">
+        <div class="section-head">
+            <div class="section-icon icon-green">💾</div>
+            <div><h2>Local Data Storage &amp; History</h2><div class="section-num">Section 05</div></div>
+        </div>
+        <p>To provide offline features and a convenient learning experience, the App stores certain data locally on your device using Android Room (SQLite):</p>
+        <ul>
+            <li><strong>Saved Solution History:</strong> Past solved math problems, including equations, timestamps, and step-by-step answers.</li>
+            <li><strong>Custom Calculations:</strong> Saved inputs from 2D/3D geometry calculators and unit converter tools.</li>
+            <li><strong>Game High Scores:</strong> Workout scores, game levels, and daily math practice streaks.</li>
+        </ul>
+        <p>All local database files remain strictly within your device's sandbox environment. Uninstalling the App or tapping "Clear History" will permanently delete all local history.</p>
+    </div>
+
+    <!-- ── 6. Ads ──────────────────────────────────────────────────── -->
+    <div class="section" id="ads">
+        <div class="section-head">
+            <div class="section-icon icon-amber">📢</div>
+            <div><h2>Advertising — Google AdMob</h2><div class="section-num">Section 06</div></div>
+        </div>
+
+        <div class="callout callout-amber">
+            <strong>AdMob Disclosure:</strong> This App is supported by advertisements served through Google AdMob. AdMob may collect device-level identifiers to display personalized or non-personalized ads.
+        </div>
+
+        <h3 style="color:var(--accent);margin:18px 0 8px;font-size:1rem;">Ad Types Implemented</h3>
+        <div class="ad-types">
+            <div class="ad-type-card">
+                <strong>⚡ Banner &amp; Interstitial Ads</strong>
+                <span>Displayed at non-intrusive points, such as transition screens after obtaining a solution. Frequency capping is enforced to maintain a clean user experience.</span>
+            </div>
+            <div class="ad-type-card">
+                <strong>🎬 Rewarded Video Ads</strong>
+                <span>Voluntary opt-in video ads that users can choose to watch to unlock extra AI solution hints or premium calculator features.</span>
+            </div>
+        </div>
+
+        <h3 style="color:var(--accent);margin:18px 0 8px;font-size:1rem;">Data Processed by Ad Networks</h3>
+        <ul>
+            <li>Google Advertising Identifier (GAID)</li>
+            <li>Device hardware details (screen dimensions, language, OS build)</li>
+            <li>Approximate location derived from IP address</li>
+            <li>Ad engagement metrics (clicks, impressions)</li>
+        </ul>
+        <p>You may manage or reset your advertising ID at any time via your device settings: <strong>Settings → Google → Ads → Opt out of Ads Personalization / Reset Advertising ID</strong>.</p>
+    </div>
+
+    <!-- ── 7. Analytics ───────────────────────────────────────────── -->
+    <div class="section" id="analytics">
+        <div class="section-head">
+            <div class="section-icon icon-blue">📈</div>
+            <div><h2>Analytics &amp; Error Reporting</h2><div class="section-num">Section 07</div></div>
+        </div>
+        <p>We integrate <strong>Google Firebase Analytics</strong> to measure application health and feature usage trends (e.g., which calculators or game modes are most popular). This helps us optimize performance and deliver updates.</p>
+        <ul>
+            <li>Collected analytics data is aggregated and anonymized.</li>
+            <li>No mathematical equations, scanned photos, or personal content is ever sent to analytics engines.</li>
+            <li>Crash reports are collected automatically to identify and fix unexpected application crashes across different Android devices.</li>
+        </ul>
+    </div>
+
+    <!-- ── 8. Third-Party SDKs ─────────────────────────────────────── -->
+    <div class="section" id="thirdparty">
+        <div class="section-head">
+            <div class="section-icon icon-slate">🔗</div>
+            <div><h2>Third-Party SDKs &amp; APIs</h2><div class="section-num">Section 08</div></div>
+        </div>
+        <p>The App integrates trusted third-party SDKs to deliver core features and services. Each service handles data according to its respective privacy standards.</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>SDK / Service</th>
+                        <th>Provider</th>
+                        <th>Purpose</th>
+                        <th>Data Transmitted?</th>
+                        <th>Privacy Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Google Gemini AI API</strong></td>
+                        <td>Google LLC</td>
+                        <td>AI math problem solving</td>
+                        <td><span class="tick">✔ Math query &amp; scanned text</span></td>
+                        <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google ML Kit / CameraX</strong></td>
+                        <td>Google LLC</td>
+                        <td>Camera preview &amp; OCR text recognition</td>
+                        <td><span class="cross">✘ On-device processing</span></td>
+                        <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google AdMob</strong></td>
+                        <td>Google LLC</td>
+                        <td>In-app advertising</td>
+                        <td><span class="tick">✔ Advertising ID &amp; device info</span></td>
+                        <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Firebase Analytics</strong></td>
+                        <td>Google LLC</td>
+                        <td>App performance &amp; crash diagnostics</td>
+                        <td><span class="tick">✔ Anonymous usage statistics</span></td>
+                        <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coil Image Loading</strong></td>
+                        <td>Open Source</td>
+                        <td>Asynchronous image rendering</td>
+                        <td><span class="cross">✘ On-device only</span></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AndroidX Room</strong></td>
+                        <td>Google / Android</td>
+                        <td>Local history database</td>
+                        <td><span class="cross">✘ On-device only</span></td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ── 9. Storage & Security ──────────────────────────────────── -->
+    <div class="section" id="storage">
+        <div class="section-head">
+            <div class="section-icon icon-green">🔒</div>
+            <div><h2>Data Security Measures</h2><div class="section-num">Section 09</div></div>
+        </div>
+        <ul>
+            <li>All network communications between the App and Google AI APIs utilize encrypted HTTPS (TLS 1.2/1.3) protocols.</li>
+            <li>Local history and preferences are protected by Android's application sandboxing architecture.</li>
+            <li>Jay Studio does not maintain external user accounts, cloud databases of personal identity, or public solution repositories.</li>
+        </ul>
+    </div>
+
+    <!-- ── 10. Your Rights ─────────────────────────────────────────── -->
+    <div class="section" id="rights">
+        <div class="section-head">
+            <div class="section-icon icon-blue">⚖️</div>
+            <div><h2>Your Controls &amp; Data Rights</h2><div class="section-num">Section 10</div></div>
+        </div>
+        <p>You maintain complete authority over your device data:</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Action</th><th>How to Execute</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Delete Math History</strong></td><td>Open History screen → Tap "Clear History" to delete local records</td></tr>
+                    <tr><td><strong>Revoke Camera Permission</strong></td><td>Device Settings → Apps → Maths Scanner → Permissions → Camera → Deny</td></tr>
+                    <tr><td><strong>Opt out of Targeted Ads</strong></td><td>Device Settings → Google → Ads → Opt out of Ads Personalization</td></tr>
+                    <tr><td><strong>Wipe All App Data</strong></td><td>Device Settings → Apps → Maths Scanner → Storage → Clear Data</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ── 11. Permissions ─────────────────────────────────────────── -->
+    <div class="section" id="permissions">
+        <div class="section-head">
+            <div class="section-icon icon-purple">🔑</div>
+            <div><h2>Permissions Breakdown</h2><div class="section-num">Section 11</div></div>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Permission</th><th>Purpose</th><th>Optional?</th><th>Leaves Device?</th></tr></thead>
+                <tbody>
+                    <tr><td><code>CAMERA</code></td><td>Scan math equations from paper / book</td><td>Yes — keyboard input works without it</td><td><span class="tick">✔ Sent to AI for solving</span></td></tr>
+                    <tr><td><code>INTERNET</code></td><td>Connect to Google Gemini AI API for math solutions &amp; AdMob</td><td>Core AI feature requires connection</td><td><span class="tick">✔ Encryption over HTTPS</span></td></tr>
+                    <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Verify active internet connection before AI API calls</td><td>Required for network status check</td><td><span class="cross">✘ Never</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ── 12. Children ───────────────────────────────────────────── -->
+    <div class="section" id="children">
+        <div class="section-head">
+            <div class="section-icon icon-red">👶</div>
+            <div><h2>Children's Privacy Protection</h2><div class="section-num">Section 12</div></div>
+        </div>
+        <p>Maths Scanner &amp; AI Solution is designed as an educational homework helper and learning calculator. We do not knowingly gather personal identifiable information from children under 13 years of age. Parents or guardians who have questions regarding data privacy are welcome to contact our team.</p>
+    </div>
+
+    <!-- ── 13. Policy Changes ──────────────────────────────────────── -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-icon icon-slate">🔄</div>
+            <div><h2>Policy Updates</h2><div class="section-num">Section 13</div></div>
+        </div>
+        <p>We may periodically update this Privacy Policy to reflect app improvements, new tools, or updated Play Store policies. The revised document will be posted with an updated "Last Updated" date at the top. Continued use of the App following policy updates signifies acceptance of the revised terms.</p>
+    </div>
+
+    <!-- ── 14. Contact ────────────────────────────────────────────── -->
+    <div class="section" id="contact">
+        <div class="section-head">
+            <div class="section-icon icon-blue">✉️</div>
+            <div><h2>Contact Developer</h2><div class="section-num">Section 14</div></div>
+        </div>
+        <p>If you have any questions, suggestions, or privacy requests concerning Maths Scanner &amp; AI Solution, please feel free to reach out:</p>
+        <ul>
+            <li><strong>Developer / Studio:</strong> Jay Studio</li>
+            <li><strong>Package Name:</strong> <code>com.jaystudio.ai.maths.scanner.solution</code></li>
+            <li><strong>Support Email:</strong> <a href="mailto:jaystudioapps@gmail.com">jaystudioapps@gmail.com</a></li>
+            <li><strong>Location:</strong> Gujarat, India</li>
+        </ul>
+        <div class="callout callout-blue">
+            We aim to address all user feedback and privacy inquiries within <strong>30 business days</strong>.
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <strong>Maths Scanner &amp; AI Solution</strong><br>
+    © 2026 Jay Studio · Gujarat, India<br>
+    <a href="mailto:jaystudioapps@gmail.com">jaystudioapps@gmail.com</a>
+</footer>
+
+</body>
+</html>
